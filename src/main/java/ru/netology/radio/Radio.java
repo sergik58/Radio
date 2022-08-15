@@ -57,7 +57,7 @@ public class Radio {
         }
 
     }
-        
+
 
     public void prevRadio() {
         if (currentRadio == 0) {
