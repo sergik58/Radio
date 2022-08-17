@@ -8,14 +8,14 @@ public class RadioTest {
     @Test
     public void shouldTestRadio() {
         Radio radio = new Radio();
-        radio.currentRadio = 7;
+        radio.setCurrentRadio (7);
         int expected = 7;
         int actual = radio.getCurrentRadio();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void stationOfMaxBorder() {
+    public void RadioOfMaxEdge() {
         Radio radio = new Radio();
         radio.setCurrentRadio(9);
         radio.increaseRadio();
@@ -25,7 +25,7 @@ public class RadioTest {
     }
 
     @Test
-    public void stationBelowMax() {
+    public void RadioDownMax() {
         Radio radio = new Radio();
         radio.setCurrentRadio(2);
         radio.increaseRadio();
@@ -35,7 +35,7 @@ public class RadioTest {
     }
 
     @Test
-    public void ifCurrentStationLessThanZero() {
+    public void RadioZero() {
         Radio radio = new Radio();
         radio.setCurrentRadio(-1);
         int expected = 0;
@@ -55,7 +55,7 @@ public class RadioTest {
     }
 
     @Test
-    public void buttonPrevStation() {
+    public void shouldButtonPrevRadio() {
         Radio radio = new Radio();
         radio.setCurrentRadio(2);
         radio.prevRadio();
@@ -65,7 +65,7 @@ public class RadioTest {
     }
 
     @Test
-    public void buttonPrevFromZero() {
+    public void shouldButtonPrevFromZero() {
         Radio radio = new Radio();
         radio.setCurrentRadio(0);
         radio.prevRadio();
@@ -75,7 +75,7 @@ public class RadioTest {
     }
 
     @Test
-    public void stationOfLowerBorder() {
+    public void shouldStationOfDownEdge() {
         Radio radio = new Radio();
         radio.setCurrentRadio(0);
         radio.increaseRadio();
@@ -85,7 +85,7 @@ public class RadioTest {
     }
 
     @Test
-    public void stationMax() {
+    public void shouldSetRadioMax() {
         Radio radio = new Radio();
         radio.setToMaxRadio();
         int expected = 9;
@@ -114,7 +114,7 @@ public class RadioTest {
     }
 
     @Test
-    public void volumeMax() {
+    public void shouldVolumeMax() {
         Radio radio = new Radio();
         radio.setToMaxVolume();
         int expected = 10;
@@ -123,7 +123,7 @@ public class RadioTest {
     }
 
     @Test
-    public void volumeBelowMax() {
+    public void shouldVolumeDownMax() {
         Radio radio = new Radio();
         radio.setCurrentVolume(2);
         radio.increaseVolume();
@@ -133,7 +133,7 @@ public class RadioTest {
     }
 
     @Test
-    public void volumeUpToMax() {
+    public void shouldVolumeUpToMax() {
         Radio radio = new Radio();
         radio.setCurrentVolume(10);
         radio.increaseVolume();
@@ -144,7 +144,7 @@ public class RadioTest {
 
 
     @Test
-    public void buttonPrevVolume() {
+    public void shouldButtonPrevVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(5);
         radio.belowVolumeToMax();
@@ -154,7 +154,7 @@ public class RadioTest {
     }
 
     @Test
-    public void buttonPrevVolumeFromZero() {
+    public void shouldButtonPrevVolumeFromZero() {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
         radio.belowVolumeToMax();
@@ -164,7 +164,7 @@ public class RadioTest {
     }
 
     @Test
-    public void buttonPrevVolumeFromLowerBorder() {
+    public void shouldButtonPrevVolumeFromDOwnEdge() {
         Radio radio = new Radio();
         radio.setCurrentVolume(1);
         radio.belowVolumeToMax();
@@ -174,7 +174,7 @@ public class RadioTest {
     }
 
     @Test
-    public void buttonPrevVolumeFromUpperBorder() {
+    public void shouldButtonPrevVolumeFromUpEdge() {
         Radio radio = new Radio();
         radio.setCurrentVolume(10);
         radio.belowVolumeToMax();
